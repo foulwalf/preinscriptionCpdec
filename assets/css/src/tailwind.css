@@ -1,0 +1,342 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    @apply transition delay-100
+}
+body{
+    @apply h-screen md:text-base text-xs
+}
+h4{
+    @apply font-extrabold uppercase inline max-w-max;
+}
+div, input:not([type=radio]), select{
+    @apply p-4 rounded /*border-2 border-black*/
+}
+svg{
+    @apply inline
+}
+p{
+    @apply text-left p-3
+}
+ul{
+    @apply list-disc text-left px-3
+}
+.bg_orange{
+    background: rgb(224,90,8);
+    background: linear-gradient(16deg, rgba(224,90,8,1) 0%, rgba(251,158,54,1) 50%, rgba(245,196,129,1) 100%);
+}
+.bg_green{
+    background: rgb(14,154,59);
+    background: linear-gradient(16deg, rgba(14,154,59,1) 0%, rgba(76,160,106,1) 50%, rgba(166,213,183,1) 100%);
+}
+/*accueil*/
+.body{
+    @apply h-full w-full pt-0 bg-left-top;
+    background: linear-gradient(16deg, rgba(255, 255, 255, .45) 0%, rgba(255, 255, 255, .45) 100%),url(../../img/bgFondation.jpg) no-repeat fixed;
+    background-size: cover;
+    overflow-y: scroll;
+}
+.container{
+    @apply w-full my-0 mx-auto bg-white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.title{
+    @apply text-center text-2xl
+}
+.card{
+    @apply md:flex md:items-center md:justify-around;
+}
+.card__title{
+    @apply md:w-1/2 absolute -top-6 md:-top-7 flex items-center justify-start;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.card__title svg{
+    @apply mr-2
+}
+.card__body{
+    @apply md:m-4 mx-0 my-9 relative transition delay-100;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.card__details div:first-child{
+    @apply text-center text-xl
+}
+.card__button{
+    @apply w-1/2 my-3 mx-auto p-0 relative transition delay-100 /*hover:shadow-2xl*/
+}
+.card__button:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.card__button a{
+    @apply absolute w-full h-full
+}
+.card__button button{
+    @apply w-full h-full py-3 px-2 font-bold flex items-center justify-center
+}
+.card__button button svg{
+    @apply mr-2
+}
+.card__footer{
+    @apply relative text-red-500 bg-red-100
+}
+.card__footer__circle{
+    @apply absolute p-2 rounded-full left-3 -top-6 md:-top-7 font-bold bg-red-100;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+/*les formulaires*/
+form{
+    @apply w-full
+}
+.ast{
+    @apply text-red-500
+}
+.row div{
+    @apply md:inline block
+}
+.col1, .col2, .col3, .col4{
+    @apply md:flex md:justify-between
+}
+.col1 div{
+    @apply md:w-full md:h-full m-4
+}
+.col2 div{
+    @apply md:w-1/2 md:h-full m-4
+}
+.col3 div{
+    @apply md:w-1/3 md:h-full m-4
+}
+.col4 div{
+    @apply md:w-1/4 md:h-full m-4
+}
+.form-group{
+    @apply relative p-0
+}
+.form-group label{
+    @apply transition delay-300 w-full break-words;
+}
+.form-group .label{
+    @apply text-black;
+}
+.form-group input[type=text],input[type=email], input[type=date], input[type=number],input[type=file], input[type=submit], input[type=reset], select{
+    @apply   w-full h-full p-4 border-2 border-gray-400 focus:outline-none focus:ring-2;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.validation .row{
+    @apply flex justify-between
+}
+.validation .form-group{
+    @apply w-1/2 md:flex
+}
+.validation .form-group>input{
+    @apply cursor-pointer font-bold ring-0
+}
+.validation .form-group:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+/*.labelfloat{*/
+/*    @apply absolute inset-y-1 md:inset-y-1 md:text-sm text-xs left-4 w-max text-gray-400*/
+/*}*/
+.area{
+    @apply border-2 border-gray-400 h-auto
+}
+.area>.choix{
+    @apply bg-gray-300 py-3 m-1 max-w-full md:max-w-max inline-block relative;
+    padding-right: 30px;
+    padding-left: .5rem;
+}
+.toggle{
+    @apply cursor-pointer
+}
+/*.toggle:hover{*/
+/*    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;*/
+/*}*/
+.choix>.fermer{
+    @apply bg-gray-400 h-auto w-1/5 py-1 cursor-pointer absolute inline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+    width: 20px;
+    margin: 0 5px 0 0;
+}
+.choix>.fermer:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.f_off{
+    @apply hidden !important;
+}
+.loader-opac{
+    opacity: .5;
+}
+::-webkit-file-upload-button {
+    font: inherit;
+    -webkit-appearance: button;
+}
+input[type=file]{
+    /*color: transparent;*/
+    position: relative;
+    border: none;
+    cursor: pointer;
+    background-color: #e9ecef;
+    @apply pl-0 py-0
+}
+input[type=file]::-webkit-file-upload-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 1rem .8rem 1rem;
+    margin: -.1rem -.1rem;
+    -webkit-margin-end: 0.75rem;
+    margin-inline-end: 0.75rem;
+    color: #212529;
+    background-color: #e9ecef;
+    border-style: solid;
+    border-width: 0;
+    border-right-width: 1rem;
+    border-inline-end-width: 2px;
+    @apply rounded;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+input[type=file]::-webkit-file-upload-button:hover, input[type=file]::-webkit-file-upload-button:focus{
+    cursor: pointer;
+}input[type=file]::-webkit-file-selector-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 1rem .8rem 1rem;
+    margin: -.1rem -.1rem;
+    -webkit-margin-end: 0.75rem;
+    margin-inline-end: 0.75rem;
+    color: #212529;
+    background-color: #e9ecef;
+    border-style: solid;
+    border-width: 0;
+    border-right-width: 1rem;
+    border-inline-end-width: 2px;
+    @apply rounded;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+input[type=file]::-webkit-file-selector-button:hover, input[type=file]::-webkit-file-selector-button:focus{
+    cursor: pointer;
+}
+.fichiers .form-group, .fichiers .form-group>*{
+    @apply cursor-pointer
+}
+.fichiers input:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.fichiers .filelabel{
+    @apply absolute /*hidden*/ text-black z-10;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+}
+input[type=radio]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid rgb(14,154,59,.5);
+    background:  none;
+    transition: background .3s, border .3s, box-shadow .2s;
+    @apply rounded-full h-4 w-4 p-2 mx-1
+}
+input[type=radio]:not(:first-child){
+    @apply ml-4
+}
+input[type=radio]:hover, input[type=radio]:checked{
+    border: 1px solid rgb(14,154,59,1);
+}
+input[type=radio]:checked{
+    background: rgb(14,154,59,1);
+}
+input[type=radio]:checked:after{
+    content: ' ';
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    background: white;
+    @apply w-3/5 h-3/5 rounded-full
+}
+.radiolabel{
+    @apply md:text-base text-xs cursor-pointer max-w-max
+}
+.radio-col{
+    @apply relative
+}
+.radio-col div{
+    @apply cursor-pointer ml-0 pl-0 flex flex-row items-center justify-start min-w-max
+}
+/*les messages*/
+.message-card{
+    @apply md:w-1/2 my-0 mx-auto
+}
+label.error{
+    @apply text-red-500
+}
+.form-group input.error, .form-group select.error{
+    @apply text-red-500 border-red-500 ring-red-300
+}
+#profession-error, #ves-error, #cours-error{
+    @apply absolute top-20 left-1
+}
+#typebachelier-error{
+    @apply absolute top-16 left-5
+}
+.loader{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background: white;
+    z-index: 2;
+    @apply  flex items-center justify-center;
+}
+.lds-rings div.lds-ring {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    border: 9px solid;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgba(251,158,54,1)  transparent transparent transparent;
+}
+.lds-rings div.lds-ring:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-rings div.lds-ring:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-rings div.lds-ring:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
