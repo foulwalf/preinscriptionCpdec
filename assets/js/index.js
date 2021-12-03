@@ -585,10 +585,12 @@
             required: "Veuillez choisir votre profession",
         },
         entreprise: {
-            required: "Ce champ est requis"
+            required: "Ce champ est requis",
+            noSpace: true
         },
         etablissement: {
-            required: "Ce champ est requis"
+            required: "Ce champ est requis",
+            noSpace: true
         },
         ves: {
             required: "Veuillez choisir une option"
@@ -661,7 +663,7 @@
     });
     $("#btn-valid-ab").on("click", function (e) {
         e.preventDefault();
-        if(formulaireab.valid()){
+        if (formulaireab.valid()) {
             $('.loader').removeClass("f_off").addClass("loader-opac")
             formulaireab.submit()
         }
@@ -669,6 +671,7 @@
     $("#verif-button").on("click", function (e) {
         e.preventDefault()
         if (verifform.valid()) {
+            $('.loader').removeClass("f_off").addClass("loader-opac")
             let verifemail = $("#verifemail").val()
             let typebachelier = $("#nb").is(":checked") ? $("#nb").val() : $("#ab").val()
             $.ajax({
@@ -678,10 +681,6 @@
                 dataType: "JSON",
                 success: function (data) {
                     if (data.etat === "1") {
-                        let session = window.sessionStorage
-                        for (const property in data) {
-                            session.setItem(`${property}`, data[property])
-                        }
                         window.location.href = "../../views/verification/admis.php"
                     } else if (data.etat === "0") {
                         window.location.href = "../../views/messages/erreur.php?type=echecins"
@@ -696,13 +695,12 @@
         }
     });
 
-
     $('input[id^=btn-reset]').on("click", function (e) {
-        window.location = "../../index.php"
+        window.location = "accueil.php"
     })
 
     $('input[type=text]').focusout(function (e) {
-            $(this).val($(this).val().toUpperCase())
+        $(this).val($(this).val().toUpperCase())
     })
     // validation de formulaire des nouveaux bacheliers
     formulairenb.validate({rules: rulesNB, messages: messagesNB});

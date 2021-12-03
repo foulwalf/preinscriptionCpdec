@@ -64,7 +64,7 @@
                         }
                         ?>
                     </div>
-                    <div class="card__button bg-red-500"><a href="<?= ($_GET['type'] == "echecins" || $_GET['type'] == "echecverif" || $_GET['type'] == "waiting") ? "../verification/verification.php" : "../../../" ?>"></a>
+                    <div class="card__button bg-red-500"><a href="<?= ($_GET['type'] == "echecins" || $_GET['type'] == "echecverif" || $_GET['type'] == "waiting") ? "../verification/verification.php" : "../form/accueil.php" ?>"></a>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">

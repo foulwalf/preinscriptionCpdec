@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    for (const property in data) {
+        sessionStorage.setItem(`${property}`, data[property])
+    }
     let ues = {
         111: {
             nom: "Fondamentaux du droit"
@@ -223,7 +226,7 @@ $(document).ready(function () {
                         headerRows: 1,
                         widths: ['*', '*'],
                         body: [
-                            [{text: "Décision :  admis(e)", alignment: "left",}, {
+                            [{text: "Décision :  ", alignment: "left",}, {
                                 text: `Date  :  ${new Date().toLocaleDateString()}`,
 
                                 alignment: "right"
@@ -345,7 +348,7 @@ $(document).ready(function () {
                         widths: ['*', '*'],
                         body: [
                             [{
-                                text: "Décision :  admis(e)",
+                                text: "Décision :  ",
                                 alignment: "left"
                             }, {text: `Date  :  ${new Date().toLocaleDateString()}`, alignment: "right"}]
                         ]
@@ -377,7 +380,7 @@ $(document).ready(function () {
 
     $("#btn-down-pdf").on("click", function () {
         pdfMake.createPdf(pdf).download(`Fiche de préinscription de ${sessionStorage.nom} ${sessionStorage.prenom}.pdf`, () => {
-            location.href = "../verification/verification.php"
+            window.location = "../form/accueil.php"
         })
     })
 })

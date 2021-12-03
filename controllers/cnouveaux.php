@@ -65,6 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] !== "POST") {
                     } catch (Exception $e) {
                     }
                     if ($note) {
+                        session_start();
+                        $_SESSION['candidat'] = $candidat->jsonSerialize();
                         header("location: ../views/messages/succes.php");
                     } else {
                         try {
@@ -77,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] !== "POST") {
                     try {
                         $candidat->supprimerCandidat();
                     } catch (Exception $e) {
+
                     }
                     header("location: ../views/messages/erreur.php?type=inc");
                 }

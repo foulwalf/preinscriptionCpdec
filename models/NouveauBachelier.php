@@ -1,7 +1,5 @@
 <?php
 
-use JetBrains\PhpStorm\Pure;
-
 include "Candidat.php";
 
 class NouveauBachelier extends Candidat
@@ -243,7 +241,7 @@ class NouveauBachelier extends Candidat
         return ($this->moyenneAnnuelleFrancais + $this->moyenneAnnuelleAnglais + $this->moyenneAnnuelleMath + ($this->noteBacFrancais * 2) + ($this->noteBacMath * 2) + $this->noteBacAnglais + $this->moyenneBac + $this->moyenneGeneraleAnnuelle) / 10;
     }
 
-    #[Pure] public function jsonSerialize()
+    public function jsonSerialize()
     {
         return ["nom" => $this->getNom(), "prenom" => $this->getPrenom(), "dateDeNaissance" => $this->getDateDeNaissance(), "lieuDeNaissance" => $this->getLieuDeNaissance(), "nationalite" => $this->getNationalite(), "etablisssementDorigine" => $this->getEtablisssementDorigine(), "contact" => $this->getContact(), "email" => $this->getEmail(), "nomDuParent" => $this->getNomDuParent(), "prenomDuParent" => $this->getPrenomDuParent(), "contactDuParent" => $this->getContactDuParent(), "emailDuParent" => $this->getEmailDuParent(), "adresseDuParent" => $this->getAdresseDuParent(), "ue" => explode(",", $this->getUe()), "etat" => $this->getEtat(), "serie" => $this->getSerie(), "moyenneAnnuelleFrancais" => $this->getMoyenneAnnuelleFrancais(), "moyenneAnnuelleAnglais" => $this->getMoyenneAnnuelleAnglais(), "moyenneAnnuelleMath" => $this->getMoyenneAnnuelleMath(), "noteBacFrancais" => $this->getNoteBacFrancais(), "noteBacAnglais" => $this->getNoteBacAnglais(), "noteBacMath" => $this->getNoteBacMath(), "moyenneGeneraleAnnuelle" => $this->getMoyenneGeneraleAnnuelle(), "totalPointBac" => $this->getTotalPointBac(), "moyenneBac" => $this->getMoyenneBac(), "moyenneCpdec" => $this->moyenneCpdec()];
     }

@@ -44,10 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] !== "POST") {
         }
         try {
             $inscription = $candidat->ajouterCandidat();
-            echo '<pre>';
-            var_dump($nomparent);
-            echo '</pre>';
-            die();
         } catch (Exception $e){
 
         }
@@ -58,6 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] !== "POST") {
 
             }
             if ($ajoutFichiers) {
+                session_start();
+                $_SESSION['candidat'] = $candidat->jsonSerialize();
                 header("location: ../views/messages/succes.php");
             } else {
                 try {

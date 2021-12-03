@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['candidat'])){
+    $c = $_SESSION['candidat'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +13,11 @@
     <title>CPDEC</title>
     <link rel="stylesheet" href="../../assets/css/dist/style.css">
     <script src="../../assets/js/jquery.js"></script>
+    <script src="../../assets/js/pdfmake/build/pdfmake.js"></script>
+    <script src="../../assets/js/pdfmake/build/vfs_fonts.js"></script>
+    <script>
+        data = <?= json_encode($c) ?>
+    </script>
 </head>
 
 <body>
@@ -37,15 +48,13 @@
                     </h4>
                 </div>
                 <div class="card__details">
-                    <div>Votre préinscription a été effectuée avec succès</div>
-                    <div class="card__button bg_green"><a href="../../index.php"></a>
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    <div>Votre préinscription a été effectuée avec succès, vous pouvez imprimer votre fiche et vous rendre au cpdec pour payer vos frais</div>
+                    <div class="card__button bg_green">
+                        <button id="btn-down-pdf" style="outline: none">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                             </svg>
-                            Retour
+                            Cliquez ici
                         </button>
                     </div>
                 </div>
@@ -71,5 +80,6 @@
 </div>
 
 </body>
+<script src="../../assets/js/pdf.js"></script>
 <script src="../../assets/js/load.js"></script>
 </html>

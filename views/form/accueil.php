@@ -37,7 +37,7 @@
                     </h4>
                 </div>
                 <div class="card__details">
-                    <div>Année du bac = <?= date("Y") ?> </div>
+                    <div>Candidat ayant obtenu le bac en <?= date("Y") ?> </div>
                     <div class="card__button bg_orange"><a href="formulairenb.php"></a>
                         <button>Se préinscrire</button>
                     </div>
@@ -51,7 +51,7 @@
                         </svg>
                     </div>
                     <p>
-                        <b>Information :</b>
+                        <b>Informations :</b>
                     <ul>
                         <li>Toute candidature comportant des déclarations ou des documents faux sera
                             systématiquement rejetée
@@ -68,7 +68,7 @@
                     </h4>
                 </div>
                 <div class="card__details">
-                    <div>Année du bac < <?= date("Y") ?> </div>
+                    <div>Candidat ayant obtenu le bac avant <?= date("Y") ?> </div>
                     <div class="card__button bg_green"><a href="formulaireab.php"></a>
                         <button>Se préinscrire</button>
                     </div>
